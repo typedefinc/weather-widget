@@ -13,6 +13,7 @@ export interface WindObjectType {
 }
 
 export interface WeatherResponseType {
+  id: string,
   name: string,
   main: {
     temp: number,
@@ -27,7 +28,7 @@ export interface WeatherResponseType {
 
 export default class WeatherService extends BaseService {
   constructor() {
-    super('/weather');
+    super('weather');
   }
 
   async getWeatherByCoord(lat: number, lon: number): Promise<WeatherResponseType | null> {
@@ -35,6 +36,27 @@ export default class WeatherService extends BaseService {
       params: {
         lat,
         lon,
+      }
+    });
+
+    return response.data ?? null;
+  }
+
+  async getWeatherByPlaceName(query: string): Promise<WeatherResponseType | null> {
+    const response: AxiosCallResponse<WeatherResponseType> = await this.axiosCall({
+      params: {
+        q: query
+      }
+    });
+
+    return response.data ?? null;
+  }
+
+
+  async getWeatherById(id: number): Promise<WeatherResponseType | null> {
+    const response: AxiosCallResponse<WeatherResponseType> = await this.axiosCall({
+      params: {
+        id,
       }
     });
 

@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@heroicons/vue": "^2.0.18",
+    "axios": "^1.4.0",
     "sass": "^1.64.2",
     "url": "^0.11.1",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-draggable-next": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20.4.8",

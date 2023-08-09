@@ -1,32 +1,27 @@
 <script setup lang="ts">
-const positionAllowHandler = () => {
-  navigator.geolocation.getCurrentPosition(() => {
-    console.log('sdfsdf')
-  })
-}
+import { XCircleIcon } from '@heroicons/vue/24/outline';
 </script>
 
 <template>
-<div class="position-not-allowed">
-  <div class="error-text">
-    Allow location access
+  <div class="position-not-allowed">
+    <div class="error-text">
+      <x-circle-icon class="w-10 h-10" />
+        Please, enable geolocation access!
+    </div>
   </div>
-
-  <button class="allow-button">
-    Allow
-  </button>
-</div>
 </template>
 
 <style scoped lang="scss">
 .position-not-allowed {
   @apply w-full h-full;
   @apply flex flex-col items-center justify-center;
-  @apply space-y-4;
+  @apply space-y-4 my-6;
 }
 
 .error-text {
-  @apply text-[24px];
+  @apply flex flex-col items-center;
+  @apply text-[20px];
+
 }
 
 .allow-button {

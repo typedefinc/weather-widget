@@ -3,11 +3,11 @@ import { WeatherObjectType, WindObjectType } from '@/api/weather.ts';
 import { ArrowUpIcon} from '@heroicons/vue/24/outline';
 
 interface WeatherDetailProps {
-  weather?: WeatherObjectType,
-  humidity?: number,
-  pressure?: number,
-  visibility?: number,
-  wind?: WindObjectType,
+  weather: WeatherObjectType,
+  humidity: number,
+  pressure: number,
+  visibility: number,
+  wind: WindObjectType,
 }
 
 defineProps<WeatherDetailProps>();
