@@ -3,7 +3,7 @@ import IconButton from '@/components/ui/buttons/IconButton.vue';
 import { Cog8ToothIcon, ArrowLeftIcon } from '@heroicons/vue/24/outline';
 
 interface WeatherTitleProps {
-  place?: string,
+  title: string,
   isShowPlaceList: boolean,
 }
 defineProps<WeatherTitleProps>();
@@ -19,7 +19,7 @@ const toggleShowPlaceList = () => {
 
 <template>
 <div class="weather-title">
-  <div>{{ place ?? 'Bad position' }}</div>
+  <div>{{ title }}</div>
 
   <div class="settings-button">
     <icon-button @click="toggleShowPlaceList">
